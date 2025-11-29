@@ -599,33 +599,7 @@
     color: var(--secondary-color);
     transition: var(--transition);
 }
-.reference-nav {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
-        flex-wrap: wrap;
-    }
 
-    .reference-btn {
-        padding: 8px 20px;
-        background-color: #f0f0f0;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: var(--transition);
-        margin: 5px;
-    }
-
-    .reference-btn.active {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    .reference-btn:hover:not(.active) {
-        background-color: var(--accent-color);
-        color: white;
-    }
 .reference-category a:hover {
     color: var(--accent-color);
     text-decoration: underline;
@@ -686,7 +660,6 @@
                 margin: 5px;
             }
         }
-        
     </style>
 </head>
 <body>
@@ -698,7 +671,6 @@
             <nav>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="#" class="nav-link active" onclick="showPage('inicio')">Inicio</a></li>
-                    <li><a href="#" class="nav-link" onclick="showPage('contenido')">Contenido</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('temas')">Temas</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('evaluaciones')">Evaluaciones</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('contacto')">Contacto</a></li>
@@ -772,85 +744,6 @@
                                 <h3>Evalúa tu Conocimiento</h3>
                                 <p>Pon a prueba lo aprendido con nuestras evaluaciones interactivas y detalladas.</p>
                                 <a href="#" class="btn" onclick="showPage('evaluaciones')">Realizar Test</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!-- Página de Contenido -->
-        <div class="page" id="contenido">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title">Contenido del Curso</h2>
-                    <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">
-                        Este curso cubre los temas fundamentales de los sistemas operativos, organizados en cuatro módulos principales. 
-                        Cada módulo contiene información detallada, ejemplos prácticos y recursos multimedia para facilitar el aprendizaje.
-                    </p>
-                    
-                     <div class="content-grid">
-                        <div class="content-card">
-                            <div class="card-img">
-                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sistemas Operativos">
-                            </div>
-                            <div class="card-content">
-                                <h3>Módulo 1: Introducción a Sistemas Operativos</h3>
-                                <p>Conceptos fundamentales, funciones principales, evolución histórica y clasificación de los sistemas operativos.</p>
-                                <ul>
-                                    <li>• Definición y características</li>
-                                    <li>• Funciones principales</li>
-                                    <li>• Clasificación y tipos</li>
-                                    <li>• Evolución histórica</li>
-                                </ul>
-                                <a href="#" class="btn" onclick="showPage('temas'); showTopic('so');">Estudiar Módulo</a>
-                            </div>
-                        </div>
-                        <div class="content-card">
-                            <div class="card-img">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestión de Procesos">
-                            </div>
-                            <div class="card-content">
-                                <h3>Módulo 2: Gestión de Procesos</h3>
-                                <p>Administración de procesos, planificación, estados, comunicación entre procesos y algoritmos de scheduling.</p>
-                                <ul>
-                                    <li>• Concepto de proceso</li>
-                                    <li>• Estados y transiciones</li>
-                                    <li>• Planificación de CPU</li>
-                                    <li>• Comunicación entre procesos</li>
-                                </ul>
-                                <a href="#" class="btn" onclick="showPage('temas'); showTopic('procesos');">Estudiar Módulo</a>
-                            </div>
-                        </div>
-                        <div class="content-card">
-                            <div class="card-img">
-                                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestión de Memoria">
-                            </div>
-                            <div class="card-content">
-                                <h3>Módulo 3: Gestión de Memoria</h3>
-                                <p>Organización de memoria, asignación, paginación, segmentación, memoria virtual y algoritmos de reemplazo.</p>
-                                <ul>
-                                    <li>• Jerarquía de memoria</li>
-                                    <li>• Asignación de memoria</li>
-                                    <li>• Memoria virtual</li>
-                                    <li>• Algoritmos de reemplazo</li>
-                                </ul>
-                                <a href="#" class="btn" onclick="showPage('temas'); showTopic('memoria');">Estudiar Módulo</a>
-                            </div>
-                        </div>
-                        <div class="content-card">
-                            <div class="card-img">
-                                <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestión de Almacenamiento">
-                            </div>
-                            <div class="card-content">
-                                <h3>Módulo 4: Gestión de Almacenamiento</h3>
-                                <p>Sistemas de archivos, organización de datos, RAID, tecnologías de almacenamiento y gestión de E/S.</p>
-                                <ul>
-                                    <li>• Sistemas de archivos</li>
-                                    <li>• Organización de discos</li>
-                                    <li>• Tecnologías RAID</li>
-                                    <li>• Almacenamiento en la nube</li>
-                                </ul>
-                                <a href="#" class="btn" onclick="showPage('temas'); showTopic('almacenamiento');">Estudiar Módulo</a>
                             </div>
                         </div>
                     </div>
@@ -1924,16 +1817,14 @@
             <div class="topic-content active">
                 <h3>Recursos y Documentación en Español</h3>
                 
-                <!-- CAMBIÉ chapter-nav por reference-nav -->
-                <div class="reference-nav">
-                    <!-- CAMBIÉ chapter-btn por reference-btn -->
-                    <div class="reference-btn active" onclick="showReferenceCategory('recursos')">Recursos Utilizados</div>
-                    <div class="reference-btn" onclick="showReferenceCategory('videos')">Videos de Apoyo</div>
-                    <div class="reference-btn" onclick="showReferenceCategory('documentacion')">Documentación en Español</div>
-                    <div class="reference-btn" onclick="showReferenceCategory('bibliografia')">Bibliografía Recomendada</div>
+                <div class="chapter-nav">
+                    <div class="chapter-btn active" onclick="showReferenceCategory('recursos')">Recursos Utilizados</div>
+                    <div class="chapter-btn" onclick="showReferenceCategory('videos')">Videos de Apoyo</div>
+                    <div class="chapter-btn" onclick="showReferenceCategory('documentacion')">Documentación en Español</div>
+                    <div class="chapter-btn" onclick="showReferenceCategory('bibliografia')">Bibliografía Recomendada</div>
                 </div>
                 
-                <!-- El resto del contenido de referencias se mantiene igual -->
+                <!-- Categoría: Recursos Utilizados -->
                 <div class="reference-category active" id="recursos-category">
                     <h4>Recursos Utilizados en esta Plataforma</h4>
                     <p>Los siguientes recursos fueron fundamentales para el desarrollo del contenido educativo de NovaPM:</p>
@@ -2245,7 +2136,6 @@
                         <div class="footer-section">
                             <h3>Enlaces de Interés</h3>
                             <a href="#" onclick="showPage('inicio')">Inicio</a>
-                            <a href="#" onclick="showPage('contenido')">Contenido</a>
                             <a href="#" onclick="showPage('temas')">Temas</a>
                             <a href="#" onclick="showPage('evaluaciones')">Evaluaciones</a>
                             <a href="#" onclick="showPage('referencias')">Fuentes de Consulta</a>
@@ -2265,17 +2155,42 @@
         </div>
     </footer>
     </main>
-<script>
+
+    <script>
     // Respuestas correctas para todos los quizzes
     const correctAnswers = {
         // Sistemas Operativos
-        'so1': 'b', 'so2': 'c', 'so3': 'b', 'so4': 'c', 'so5': 'c',
+        'so1': 'b',
+        'so2': 'c', 
+        'so3': 'b',
+        'so4': 'c',
+        'so5': 'c',
+        
         // Gestión de Procesos
-        'gp1': 'b', 'gp2': 'd', 'gp3': 'b', 'gp4': 'b', 'gp5': 'c',
+        'gp1': 'b',
+        'gp2': 'd',
+        'gp3': 'b',
+        'gp4': 'b',
+        'gp5': 'c',
+            
         // Gestión de Memoria
-        'gm1': 'b', 'gm2': 'b', 'gm3': 'b', 'gm4': 'b', 'gm5': 'a', 'gm6': 'b', 'gm7': 'b',
+        'gm1': 'b',
+        'gm2': 'b',
+        'gm3': 'b',
+        'gm4': 'b',
+        'gm5': 'a',
+        'gm6': 'b',
+        'gm7': 'b',
+        
         // Gestión de Almacenamiento
-        'ga1': 'b', 'ga2': 'b', 'ga3': 'b', 'ga4': 'c', 'ga5': 'b', 'ga6': 'a', 'ga7': 'c', 'ga8': 'c'
+        'ga1': 'b',
+        'ga2': 'b',
+        'ga3': 'b',
+        'ga4': 'c',
+        'ga5': 'b',
+        'ga6': 'a',
+        'ga7': 'c',
+        'ga8': 'c'
     };
 
     // Navegación móvil
@@ -2286,159 +2201,95 @@
         navMenu.classList.toggle('active');
     });
     
-    // Mostrar páginas - FUNCIÓN PRINCIPAL CORREGIDA
+    // Mostrar páginas - VERSIÓN MEJORADA CON REPARACIÓN
     function showPage(pageId) {
-        console.log('Mostrando página:', pageId); // Para debug
-        
         // Ocultar todas las páginas
         document.querySelectorAll('.page').forEach(page => {
             page.classList.remove('active');
         });
         
         // Mostrar página seleccionada
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.add('active');
-        }
+        document.getElementById(pageId).classList.add('active');
         
         // Actualizar navegación activa
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
         });
-        
-        // Marcar enlace activo
-        const activeLink = document.querySelector(`a[onclick="showPage('${pageId}')"]`);
-        if (activeLink) {
-            activeLink.classList.add('active');
-        }
-        
-        // Resetear estados cuando cambias de página
-        resetPageStates();
+        event.target.classList.add('active');
         
         // Cerrar menú móvil si está abierto
         navMenu.classList.remove('active');
+        
+        // VERIFICAR Y REPARAR CONTENIDO AUTOMÁTICAMENTE
+        setTimeout(() => {
+            repairContentIfNeeded();
+        }, 50);
         
         // Scroll al inicio de la página
         window.scrollTo(0, 0);
     }
     
-    // Función para resetear estados al cambiar de página
-    function resetPageStates() {
-        // Resetear referencias a su estado inicial
-        const referenceCategories = document.querySelectorAll('.reference-category');
-        referenceCategories.forEach(cat => cat.classList.remove('active'));
-        const firstReference = document.getElementById('recursos-category');
-        if (firstReference) firstReference.classList.add('active');
-        
-        // Resetear botones de referencias
-        const referenceButtons = document.querySelectorAll('.chapter-btn');
-        referenceButtons.forEach(btn => btn.classList.remove('active'));
-        const firstRefButton = referenceButtons[0];
-        if (firstRefButton) firstRefButton.classList.add('active');
-    }
-    
-    // Mostrar contenido de temas
+    // Mostrar contenido de temas - VERSIÓN SEGURA
     function showTopic(topic) {
-        console.log('Mostrando tema:', topic);
-        
-        // Ocultar todos los contenidos
-        document.querySelectorAll('.topic-content').forEach(content => {
+        // Ocultar todos los contenidos de TEMAS
+        document.querySelectorAll('#temas .topic-content').forEach(content => {
             content.classList.remove('active');
         });
         
-        // Desactivar todas las pestañas
-        document.querySelectorAll('.topic-tab').forEach(tab => {
+        // Desactivar todas las pestañas de TEMAS
+        document.querySelectorAll('#temas .topic-tab').forEach(tab => {
             tab.classList.remove('active');
         });
         
         // Mostrar contenido seleccionado
-        const targetContent = document.getElementById(topic + '-content');
-        if (targetContent) {
-            targetContent.classList.add('active');
-        }
+        document.getElementById(topic + '-content').classList.add('active');
         
         // Activar pestaña seleccionada
         event.target.classList.add('active');
         
         // Mostrar primer capítulo por defecto
-        showChapter(topic, 1);
-    }
-    
-    // Mostrar capítulos dentro de los temas
-    function showChapter(topic, chapterNumber) {
-        console.log('Mostrando capítulo:', topic, chapterNumber);
-        
-        // Ocultar todos los capítulos del tema actual
-        const topicContent = document.getElementById(topic + '-content');
-        if (topicContent) {
-            topicContent.querySelectorAll('.chapter-content').forEach(chapter => {
-                chapter.classList.remove('active');
-            });
-            
-            // Desactivar todos los botones de capítulo del tema actual
-            topicContent.querySelectorAll('.chapter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Mostrar capítulo seleccionado
-            const targetChapter = document.getElementById(`${topic}-chapter-${chapterNumber}`);
-            if (targetChapter) {
-                targetChapter.classList.add('active');
-            }
-            
-            // Activar botón de capítulo seleccionado
-            event.target.classList.add('active');
+        const firstChapter = document.querySelector(`#${topic}-content .chapter-btn`);
+        if (firstChapter) {
+            showChapter(topic, 1);
         }
     }
     
-    // Mostrar categorías de referencias - FUNCIÓN CORREGIDA
-    function showReferenceCategory(category) {
-        console.log('Mostrando categoría de referencia:', category);
+    // Mostrar capítulos dentro de los temas - VERSIÓN CORREGIDA
+    function showChapter(topic, chapterNumber) {
+        // Obtener el contenido del tema actual
+        const topicContent = document.getElementById(`${topic}-content`);
         
-        // Ocultar todas las categorías
-        document.querySelectorAll('.reference-category').forEach(cat => {
-            cat.classList.remove('active');
+        // Ocultar todos los capítulos del tema actual SOLO
+        topicContent.querySelectorAll('.chapter-content').forEach(chapter => {
+            chapter.classList.remove('active');
         });
         
-        // Desactivar todos los botones de referencia
-        const referenceNav = document.querySelector('.chapter-nav');
-        if (referenceNav) {
-            referenceNav.querySelectorAll('.chapter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-        }
+        // Desactivar todos los botones de capítulo del tema actual SOLO
+        topicContent.querySelectorAll('.chapter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
         
-        // Mostrar categoría seleccionada
-        const targetCategory = document.getElementById(category + '-category');
-        if (targetCategory) {
-            targetCategory.classList.add('active');
-        }
+        // Mostrar capítulo seleccionado
+        document.getElementById(`${topic}-chapter-${chapterNumber}`).classList.add('active');
         
-        // Activar botón seleccionado
-        if (event && event.target) {
-            event.target.classList.add('active');
-        }
+        // Activar botón de capítulo seleccionado
+        event.target.classList.add('active');
     }
     
-    // Mostrar diferentes quizzes
+    // Mostrar diferentes quizzes - VERSIÓN SEGURA
     function showQuiz(quizId) {
-        console.log('Mostrando quiz:', quizId);
-        
-        // Ocultar todos los quizzes
-        document.querySelectorAll('.quiz-section').forEach(quiz => {
+        // Ocultar todos los quizzes de EVALUACIONES
+        document.querySelectorAll('#evaluaciones .quiz-section').forEach(quiz => {
             quiz.classList.remove('active');
         });
         
-        // Desactivar todas las pestañas de quiz
-        document.querySelectorAll('.quiz-tab').forEach(tab => {
+        // Desactivar todas las pestañas de quiz de EVALUACIONES
+        document.querySelectorAll('#evaluaciones .quiz-tab').forEach(tab => {
             tab.classList.remove('active');
         });
         
         // Mostrar quiz seleccionado
-        const targetQuiz = document.getElementById(`quiz-${quizId}`);
-        if (targetQuiz) {
-            targetQuiz.classList.add('active');
-        }
+        document.getElementById(`quiz-${quizId}`).classList.add('active');
         
         // Activar pestaña de quiz seleccionada
         event.target.classList.add('active');
@@ -2454,7 +2305,193 @@
         
         // Seleccionar la opción actual
         element.classList.add('selected');
+        
+        // Guardar la respuesta seleccionada
+        element.dataset.selected = 'true';
+        element.dataset.questionId = questionId;
     }
+    
+    // Mostrar categorías de referencias - VERSIÓN SEGURA
+    function showReferenceCategory(category) {
+        // Obtener el contenedor de referencias
+        const referencesContainer = document.getElementById('referencias');
+        
+        // Ocultar todas las categorías SOLO dentro de referencias
+        referencesContainer.querySelectorAll('.reference-category').forEach(cat => {
+            cat.classList.remove('active');
+        });
+        
+        // Desactivar todos los botones SOLO dentro de referencias
+        referencesContainer.querySelectorAll('.chapter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Mostrar categoría seleccionada
+        document.getElementById(category + '-category').classList.add('active');
+        
+        // Activar botón seleccionado
+        event.target.classList.add('active');
+    }
+    
+    // ========== SISTEMA DE REPARACIÓN AUTOMÁTICA ==========
+    
+    // Función de reparación automática - VERIFICAR Y REINICIAR CONTENIDO
+    function repairContentIfNeeded() {
+        console.log('🔍 Verificando estado del contenido...');
+        
+        // Verificar página de Referencias
+        const referencesPage = document.getElementById('referencias');
+        if (referencesPage && referencesPage.classList.contains('active')) {
+            const activeRefCategory = referencesPage.querySelector('.reference-category.active');
+            if (!activeRefCategory || activeRefCategory.innerHTML.trim() === '') {
+                console.log('⚠️  Contenido de Referencias corrupto - Reiniciando...');
+                resetReferencesContent();
+                return;
+            }
+        }
+        
+        // Verificar página de Temas
+        const topicsPage = document.getElementById('temas');
+        if (topicsPage && topicsPage.classList.contains('active')) {
+            const activeTopic = topicsPage.querySelector('.topic-content.active');
+            if (!activeTopic || activeTopic.innerHTML.trim() === '') {
+                console.log('⚠️  Contenido de Temas corrupto - Reiniciando...');
+                resetTopicsContent();
+                return;
+            }
+            
+            // Verificar también que haya un capítulo activo
+            const activeChapter = activeTopic.querySelector('.chapter-content.active');
+            if (!activeChapter || activeChapter.innerHTML.trim() === '') {
+                console.log('⚠️  Capítulo de Temas corrupto - Reiniciando...');
+                const topicId = activeTopic.id.replace('-content', '');
+                resetTopicChapters(topicId);
+            }
+        }
+        
+        // Verificar página de Evaluaciones
+        const evaluationsPage = document.getElementById('evaluaciones');
+        if (evaluationsPage && evaluationsPage.classList.contains('active')) {
+            const activeQuiz = evaluationsPage.querySelector('.quiz-section.active');
+            if (!activeQuiz || activeQuiz.innerHTML.trim() === '') {
+                console.log('⚠️  Contenido de Evaluaciones corrupto - Reiniciando...');
+                resetEvaluationsContent();
+                return;
+            }
+        }
+        
+        console.log('✅ Todo el contenido está en buen estado');
+    }
+
+    // Función para reiniciar contenido de Referencias
+    function resetReferencesContent() {
+        const referencesPage = document.getElementById('referencias');
+        
+        // Ocultar todas las categorías
+        referencesPage.querySelectorAll('.reference-category').forEach(cat => {
+            cat.classList.remove('active');
+        });
+        
+        // Desactivar todos los botones
+        referencesPage.querySelectorAll('.chapter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Activar la primera categoría
+        const firstCategory = document.getElementById('recursos-category');
+        const firstButton = referencesPage.querySelector('.chapter-btn');
+        
+        if (firstCategory) firstCategory.classList.add('active');
+        if (firstButton) firstButton.classList.add('active');
+        
+        console.log('✅ Referencias reiniciadas correctamente');
+    }
+
+    // Función para reiniciar contenido de Temas
+    function resetTopicsContent() {
+        const topicsPage = document.getElementById('temas');
+        
+        // Ocultar todos los temas
+        topicsPage.querySelectorAll('.topic-content').forEach(topic => {
+            topic.classList.remove('active');
+        });
+        
+        // Desactivar todas las pestañas
+        topicsPage.querySelectorAll('.topic-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        // Activar Sistema Operativos por defecto
+        const soContent = document.getElementById('so-content');
+        const soTab = topicsPage.querySelector('.topic-tab');
+        
+        if (soContent) soContent.classList.add('active');
+        if (soTab) soTab.classList.add('active');
+        
+        // Reiniciar capítulos de SO
+        resetTopicChapters('so');
+        
+        console.log('✅ Temas reiniciados correctamente');
+    }
+
+    // Función para reiniciar capítulos de un tema específico
+    function resetTopicChapters(topic) {
+        const topicContent = document.getElementById(`${topic}-content`);
+        if (!topicContent) return;
+        
+        // Ocultar todos los capítulos
+        topicContent.querySelectorAll('.chapter-content').forEach(chapter => {
+            chapter.classList.remove('active');
+        });
+        
+        // Desactivar todos los botones de capítulo
+        topicContent.querySelectorAll('.chapter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Activar primer capítulo
+        const firstChapter = document.getElementById(`${topic}-chapter-1`);
+        const firstChapterBtn = topicContent.querySelector('.chapter-btn');
+        
+        if (firstChapter) firstChapter.classList.add('active');
+        if (firstChapterBtn) firstChapterBtn.classList.add('active');
+        
+        console.log(`✅ Capítulos de ${topic} reiniciados`);
+    }
+
+    // Función para reiniciar contenido de Evaluaciones
+    function resetEvaluationsContent() {
+        const evaluationsPage = document.getElementById('evaluaciones');
+        
+        // Ocultar todos los quizzes
+        evaluationsPage.querySelectorAll('.quiz-section').forEach(quiz => {
+            quiz.classList.remove('active');
+        });
+        
+        // Desactivar todas las pestañas
+        evaluationsPage.querySelectorAll('.quiz-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        // Activar primer quiz
+        const firstQuiz = document.getElementById('quiz-sistemas-operativos');
+        const firstQuizTab = evaluationsPage.querySelector('.quiz-tab');
+        
+        if (firstQuiz) firstQuiz.classList.add('active');
+        if (firstQuizTab) firstQuizTab.classList.add('active');
+        
+        console.log('✅ Evaluaciones reiniciadas correctamente');
+    }
+    
+    // Función nuclear - Reinicia TODO el contenido (para casos extremos)
+    function resetAllContent() {
+        console.log('🔄 Reiniciando TODO el contenido...');
+        resetReferencesContent();
+        resetTopicsContent();
+        resetEvaluationsContent();
+    }
+    
+    // ========== FIN SISTEMA DE REPARACIÓN ==========
     
     // Envío del quiz
     function submitQuiz(quizType) {
@@ -2462,13 +2499,20 @@
         let totalQuestions = 0;
         
         // Determinar el número de preguntas según el tipo de quiz
-        const questionCounts = {
-            'sistemas-operativos': 5,
-            'gestion-procesos': 5,
-            'gestion-memoria': 7,
-            'gestion-almacenamiento': 8
-        };
-        totalQuestions = questionCounts[quizType] || 0;
+        switch(quizType) {
+            case 'sistemas-operativos':
+                totalQuestions = 5;
+                break;
+            case 'gestion-procesos':
+                totalQuestions = 5;
+                break;
+            case 'gestion-memoria':
+                totalQuestions = 7;
+                break;
+            case 'gestion-almacenamiento':
+                totalQuestions = 8;
+                break;
+        }
         
         // Calificar cada pregunta del quiz actual
         const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
@@ -2479,13 +2523,20 @@
             let questionId = '';
             
             // Determinar el prefijo según el tipo de quiz
-            const prefixes = {
-                'sistemas-operativos': 'so',
-                'gestion-procesos': 'gp',
-                'gestion-memoria': 'gm',
-                'gestion-almacenamiento': 'ga'
-            };
-            questionId = `${prefixes[quizType]}${questionNumber}`;
+            switch(quizType) {
+                case 'sistemas-operativos':
+                    questionId = `so${questionNumber}`;
+                    break;
+                case 'gestion-procesos':
+                    questionId = `gp${questionNumber}`;
+                    break;
+                case 'gestion-memoria':
+                    questionId = `gm${questionNumber}`;
+                    break;
+                case 'gestion-almacenamiento':
+                    questionId = `ga${questionNumber}`;
+                    break;
+            }
             
             const selectedOption = question.querySelector('.quiz-option.selected');
             
@@ -2509,91 +2560,80 @@
         });
         
         // Mostrar resultados
-        const quizSuffix = prefixes[quizType];
+        let quizSuffix = '';
+        switch(quizType) {
+            case 'sistemas-operativos':
+                quizSuffix = 'so';
+                break;
+            case 'gestion-procesos':
+                quizSuffix = 'gp';
+                break;
+            case 'gestion-memoria':
+                quizSuffix = 'gm';
+                break;
+            case 'gestion-almacenamiento':
+                quizSuffix = 'ga';
+                break;
+        }
+        
         const resultsElement = document.getElementById(`quiz-results-${quizSuffix}`);
         const scoreElement = document.getElementById(`score-${quizSuffix}`);
         const messageElement = document.getElementById(`result-message-${quizSuffix}`);
         
-        if (scoreElement) scoreElement.textContent = `${score}/${totalQuestions}`;
+        scoreElement.textContent = `${score}/${totalQuestions}`;
         
         // Mensaje según el puntaje
         const percentage = (score / totalQuestions) * 100;
-        let message = '';
         if (percentage >= 80) {
-            message = '¡Excelente! Dominas los conceptos de este tema.';
+            messageElement.textContent = '¡Excelente! Dominas los conceptos de este tema.';
         } else if (percentage >= 60) {
-            message = '¡Buen trabajo! Tienes un buen conocimiento del tema.';
+            messageElement.textContent = '¡Buen trabajo! Tienes un buen conocimiento del tema.';
         } else if (percentage >= 40) {
-            message = 'No está mal, pero podrías repasar algunos conceptos.';
+            messageElement.textContent = 'No está mal, pero podrías repasar algunos conceptos.';
         } else {
-            message = 'Necesitas estudiar más los conceptos de este tema.';
+            messageElement.textContent = 'Necesitas estudiar más los conceptos de este tema.';
         }
         
-        if (messageElement) messageElement.textContent = message;
-        if (resultsElement) {
-            resultsElement.style.display = 'block';
-            resultsElement.scrollIntoView({ behavior: 'smooth' });
-        }
+        resultsElement.style.display = 'block';
+        resultsElement.scrollIntoView({ behavior: 'smooth' });
     }
     
     function resetQuiz(quizType) {
-        const prefixes = {
-            'sistemas-operativos': 'so',
-            'gestion-procesos': 'gp',
-            'gestion-memoria': 'gm',
-            'gestion-almacenamiento': 'ga'
-        };
+        let quizSuffix = '';
+        switch(quizType) {
+            case 'sistemas-operativos':
+                quizSuffix = 'so';
+                break;
+            case 'gestion-procesos':
+                quizSuffix = 'gp';
+                break;
+            case 'gestion-memoria':
+                quizSuffix = 'gm';
+                break;
+            case 'gestion-almacenamiento':
+                quizSuffix = 'ga';
+                break;
+        }
         
-        const quizSuffix = prefixes[quizType];
         const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
         
         // Limpiar selecciones y marcas
-        if (quizContainer) {
-            quizContainer.querySelectorAll('.quiz-option').forEach(option => {
-                option.classList.remove('selected', 'correct', 'incorrect');
-            });
-        }
+        quizContainer.querySelectorAll('.quiz-option').forEach(option => {
+            option.classList.remove('selected', 'correct', 'incorrect');
+        });
         
         // Ocultar resultados
-        const resultsElement = document.getElementById(`quiz-results-${quizSuffix}`);
-        if (resultsElement) {
-            resultsElement.style.display = 'none';
-        }
-    }
-    // Mostrar categorías de referencias - FUNCIÓN CORREGIDA Y AISLADA
-function showReferenceCategory(category) {
-    console.log('Mostrando categoría de referencia:', category);
-    
-    // SOLO trabajar con elementos de referencias
-    const referenceContainer = document.querySelector('#referencias');
-    if (!referenceContainer) return;
-    
-    // Ocultar todas las categorías de referencia
-    referenceContainer.querySelectorAll('.reference-category').forEach(cat => {
-        cat.classList.remove('active');
-    });
-    
-    // Desactivar todos los botones de referencia
-    referenceContainer.querySelectorAll('.reference-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    // Mostrar categoría seleccionada
-    const targetCategory = document.getElementById(category + '-category');
-    if (targetCategory) {
-        targetCategory.classList.add('active');
+        document.getElementById(`quiz-results-${quizSuffix}`).style.display = 'none';
     }
     
-    // Activar botón seleccionado
-    if (event && event.target) {
-        event.target.classList.add('active');
-    }
-}
-
-    // Inicializar la página al cargar
+    // Inicialización al cargar la página
     document.addEventListener('DOMContentLoaded', function() {
-        resetPageStates();
+        console.log('🚀 NovaPM - Sistema cargado con reparación automática');
+        // Verificar el estado inicial del contenido
+        setTimeout(() => {
+            repairContentIfNeeded();
+        }, 100);
     });
-</script>
+    </script>
 </body>
 </html>
