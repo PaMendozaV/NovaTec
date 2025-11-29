@@ -599,7 +599,33 @@
     color: var(--secondary-color);
     transition: var(--transition);
 }
+.reference-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        flex-wrap: wrap;
+    }
 
+    .reference-btn {
+        padding: 8px 20px;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: var(--transition);
+        margin: 5px;
+    }
+
+    .reference-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .reference-btn:hover:not(.active) {
+        background-color: var(--accent-color);
+        color: white;
+    }
 .reference-category a:hover {
     color: var(--accent-color);
     text-decoration: underline;
@@ -660,6 +686,7 @@
                 margin: 5px;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -1897,14 +1924,16 @@
             <div class="topic-content active">
                 <h3>Recursos y Documentación en Español</h3>
                 
-                <div class="chapter-nav">
-                    <div class="chapter-btn active" onclick="showReferenceCategory('recursos')">Recursos Utilizados</div>
-                    <div class="chapter-btn" onclick="showReferenceCategory('videos')">Videos de Apoyo</div>
-                    <div class="chapter-btn" onclick="showReferenceCategory('documentacion')">Documentación en Español</div>
-                    <div class="chapter-btn" onclick="showReferenceCategory('bibliografia')">Bibliografía Recomendada</div>
+                <!-- CAMBIÉ chapter-nav por reference-nav -->
+                <div class="reference-nav">
+                    <!-- CAMBIÉ chapter-btn por reference-btn -->
+                    <div class="reference-btn active" onclick="showReferenceCategory('recursos')">Recursos Utilizados</div>
+                    <div class="reference-btn" onclick="showReferenceCategory('videos')">Videos de Apoyo</div>
+                    <div class="reference-btn" onclick="showReferenceCategory('documentacion')">Documentación en Español</div>
+                    <div class="reference-btn" onclick="showReferenceCategory('bibliografia')">Bibliografía Recomendada</div>
                 </div>
                 
-                <!-- Categoría: Recursos Utilizados -->
+                <!-- El resto del contenido de referencias se mantiene igual -->
                 <div class="reference-category active" id="recursos-category">
                     <h4>Recursos Utilizados en esta Plataforma</h4>
                     <p>Los siguientes recursos fueron fundamentales para el desarrollo del contenido educativo de NovaPM:</p>
@@ -2236,303 +2265,335 @@
         </div>
     </footer>
     </main>
+<script>
+    // Respuestas correctas para todos los quizzes
+    const correctAnswers = {
+        // Sistemas Operativos
+        'so1': 'b', 'so2': 'c', 'so3': 'b', 'so4': 'c', 'so5': 'c',
+        // Gestión de Procesos
+        'gp1': 'b', 'gp2': 'd', 'gp3': 'b', 'gp4': 'b', 'gp5': 'c',
+        // Gestión de Memoria
+        'gm1': 'b', 'gm2': 'b', 'gm3': 'b', 'gm4': 'b', 'gm5': 'a', 'gm6': 'b', 'gm7': 'b',
+        // Gestión de Almacenamiento
+        'ga1': 'b', 'ga2': 'b', 'ga3': 'b', 'ga4': 'c', 'ga5': 'b', 'ga6': 'a', 'ga7': 'c', 'ga8': 'c'
+    };
 
-    <script>
-        // Respuestas correctas para todos los quizzes
-        const correctAnswers = {
-            // Sistemas Operativos
-            'so1': 'b',
-            'so2': 'c',
-            'so3': 'b',
-            'so4': 'c',
-            'so5': 'c',
-            
-            // Gestión de Procesos
-            'gp1': 'b',
-            'gp2': 'd',
-            'gp3': 'b',
-            'gp4': 'b',
-            'gp5': 'c',
-                
-    // Gestión de Memoria
-    'gm1': 'b',
-    'gm2': 'b',
-    'gm3': 'b',
-    'gm4': 'b',
-    'gm5': 'a',
-    'gm6': 'b',
-    'gm7': 'b',
+    // Navegación móvil
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
     
-    // Gestión de Almacenamiento
-    'ga1': 'b',
-    'ga2': 'b',
-    'ga3': 'b',
-    'ga4': 'c',
-    'ga5': 'b',
-    'ga6': 'a',
-    'ga7': 'c',
-    'ga8': 'c'
-        };
-
-        // Navegación móvil
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Mostrar páginas - FUNCIÓN PRINCIPAL CORREGIDA
+    function showPage(pageId) {
+        console.log('Mostrando página:', pageId); // Para debug
         
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        // Ocultar todas las páginas
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
         });
         
-        // Mostrar páginas
-        function showPage(pageId) {
-            // Ocultar todas las páginas
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Mostrar página seleccionada
-            document.getElementById(pageId).classList.add('active');
-            
-            // Actualizar navegación activa
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Cerrar menú móvil si está abierto
-            navMenu.classList.remove('active');
-            
-            // Scroll al inicio de la página
-            window.scrollTo(0, 0);
+        // Mostrar página seleccionada
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) {
+            targetPage.classList.add('active');
         }
         
-        // Mostrar contenido de temas
-        function showTopic(topic) {
-            // Ocultar todos los contenidos
-            document.querySelectorAll('.topic-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Desactivar todas las pestañas
-            document.querySelectorAll('.topic-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Mostrar contenido seleccionado
-            document.getElementById(topic + '-content').classList.add('active');
-            
-            // Activar pestaña seleccionada
-            event.target.classList.add('active');
-            
-            // Mostrar primer capítulo por defecto
-            const firstChapter = document.querySelector(`#${topic}-content .chapter-btn`);
-            if (firstChapter) {
-                showChapter(topic, 1);
-            }
+        // Actualizar navegación activa
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Marcar enlace activo
+        const activeLink = document.querySelector(`a[onclick="showPage('${pageId}')"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
         }
         
-        // Mostrar capítulos dentro de los temas
-        function showChapter(topic, chapterNumber) {
-            // Ocultar todos los capítulos del tema actual
-            document.querySelectorAll(`#${topic}-content .chapter-content`).forEach(chapter => {
+        // Resetear estados cuando cambias de página
+        resetPageStates();
+        
+        // Cerrar menú móvil si está abierto
+        navMenu.classList.remove('active');
+        
+        // Scroll al inicio de la página
+        window.scrollTo(0, 0);
+    }
+    
+    // Función para resetear estados al cambiar de página
+    function resetPageStates() {
+        // Resetear referencias a su estado inicial
+        const referenceCategories = document.querySelectorAll('.reference-category');
+        referenceCategories.forEach(cat => cat.classList.remove('active'));
+        const firstReference = document.getElementById('recursos-category');
+        if (firstReference) firstReference.classList.add('active');
+        
+        // Resetear botones de referencias
+        const referenceButtons = document.querySelectorAll('.chapter-btn');
+        referenceButtons.forEach(btn => btn.classList.remove('active'));
+        const firstRefButton = referenceButtons[0];
+        if (firstRefButton) firstRefButton.classList.add('active');
+    }
+    
+    // Mostrar contenido de temas
+    function showTopic(topic) {
+        console.log('Mostrando tema:', topic);
+        
+        // Ocultar todos los contenidos
+        document.querySelectorAll('.topic-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Desactivar todas las pestañas
+        document.querySelectorAll('.topic-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        // Mostrar contenido seleccionado
+        const targetContent = document.getElementById(topic + '-content');
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+        
+        // Activar pestaña seleccionada
+        event.target.classList.add('active');
+        
+        // Mostrar primer capítulo por defecto
+        showChapter(topic, 1);
+    }
+    
+    // Mostrar capítulos dentro de los temas
+    function showChapter(topic, chapterNumber) {
+        console.log('Mostrando capítulo:', topic, chapterNumber);
+        
+        // Ocultar todos los capítulos del tema actual
+        const topicContent = document.getElementById(topic + '-content');
+        if (topicContent) {
+            topicContent.querySelectorAll('.chapter-content').forEach(chapter => {
                 chapter.classList.remove('active');
             });
             
             // Desactivar todos los botones de capítulo del tema actual
-            document.querySelectorAll(`#${topic}-content .chapter-btn`).forEach(btn => {
+            topicContent.querySelectorAll('.chapter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             
             // Mostrar capítulo seleccionado
-            document.getElementById(`${topic}-chapter-${chapterNumber}`).classList.add('active');
+            const targetChapter = document.getElementById(`${topic}-chapter-${chapterNumber}`);
+            if (targetChapter) {
+                targetChapter.classList.add('active');
+            }
             
             // Activar botón de capítulo seleccionado
             event.target.classList.add('active');
         }
+    }
+    
+    // Mostrar categorías de referencias - FUNCIÓN CORREGIDA
+    function showReferenceCategory(category) {
+        console.log('Mostrando categoría de referencia:', category);
         
-        // Mostrar diferentes quizzes
-        function showQuiz(quizId) {
-            // Ocultar todos los quizzes
-            document.querySelectorAll('.quiz-section').forEach(quiz => {
-                quiz.classList.remove('active');
+        // Ocultar todas las categorías
+        document.querySelectorAll('.reference-category').forEach(cat => {
+            cat.classList.remove('active');
+        });
+        
+        // Desactivar todos los botones de referencia
+        const referenceNav = document.querySelector('.chapter-nav');
+        if (referenceNav) {
+            referenceNav.querySelectorAll('.chapter-btn').forEach(btn => {
+                btn.classList.remove('active');
             });
-            
-            // Desactivar todas las pestañas de quiz
-            document.querySelectorAll('.quiz-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Mostrar quiz seleccionado
-            document.getElementById(`quiz-${quizId}`).classList.add('active');
-            
-            // Activar pestaña de quiz seleccionada
+        }
+        
+        // Mostrar categoría seleccionada
+        const targetCategory = document.getElementById(category + '-category');
+        if (targetCategory) {
+            targetCategory.classList.add('active');
+        }
+        
+        // Activar botón seleccionado
+        if (event && event.target) {
             event.target.classList.add('active');
         }
+    }
+    
+    // Mostrar diferentes quizzes
+    function showQuiz(quizId) {
+        console.log('Mostrando quiz:', quizId);
         
-        // Selección de opciones en el quiz
-        function selectOption(element, questionId) {
-            // Deseleccionar otras opciones en la misma pregunta
-            const parent = element.parentElement;
-            parent.querySelectorAll('.quiz-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            // Seleccionar la opción actual
-            element.classList.add('selected');
-            
-            // Guardar la respuesta seleccionada
-            element.dataset.selected = 'true';
-            element.dataset.questionId = questionId;
+        // Ocultar todos los quizzes
+        document.querySelectorAll('.quiz-section').forEach(quiz => {
+            quiz.classList.remove('active');
+        });
+        
+        // Desactivar todas las pestañas de quiz
+        document.querySelectorAll('.quiz-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        // Mostrar quiz seleccionado
+        const targetQuiz = document.getElementById(`quiz-${quizId}`);
+        if (targetQuiz) {
+            targetQuiz.classList.add('active');
         }
-        function showReferenceCategory(category) {
-    // Ocultar todas las categorías
-    document.querySelectorAll('.reference-category').forEach(cat => {
+        
+        // Activar pestaña de quiz seleccionada
+        event.target.classList.add('active');
+    }
+    
+    // Selección de opciones en el quiz
+    function selectOption(element, questionId) {
+        // Deseleccionar otras opciones en la misma pregunta
+        const parent = element.parentElement;
+        parent.querySelectorAll('.quiz-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        
+        // Seleccionar la opción actual
+        element.classList.add('selected');
+    }
+    
+    // Envío del quiz
+    function submitQuiz(quizType) {
+        let score = 0;
+        let totalQuestions = 0;
+        
+        // Determinar el número de preguntas según el tipo de quiz
+        const questionCounts = {
+            'sistemas-operativos': 5,
+            'gestion-procesos': 5,
+            'gestion-memoria': 7,
+            'gestion-almacenamiento': 8
+        };
+        totalQuestions = questionCounts[quizType] || 0;
+        
+        // Calificar cada pregunta del quiz actual
+        const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
+        const questions = quizContainer.querySelectorAll('.quiz-question');
+        
+        questions.forEach((question, index) => {
+            const questionNumber = index + 1;
+            let questionId = '';
+            
+            // Determinar el prefijo según el tipo de quiz
+            const prefixes = {
+                'sistemas-operativos': 'so',
+                'gestion-procesos': 'gp',
+                'gestion-memoria': 'gm',
+                'gestion-almacenamiento': 'ga'
+            };
+            questionId = `${prefixes[quizType]}${questionNumber}`;
+            
+            const selectedOption = question.querySelector('.quiz-option.selected');
+            
+            if (selectedOption) {
+                const selectedAnswer = selectedOption.textContent.trim().charAt(0);
+                
+                // Marcar respuesta correcta/incorrecta
+                if (selectedAnswer === correctAnswers[questionId]) {
+                    selectedOption.classList.add('correct');
+                    score++;
+                } else {
+                    selectedOption.classList.add('incorrect');
+                    
+                    // Mostrar la respuesta correcta
+                    const correctOption = question.querySelector(`.quiz-option:nth-child(${correctAnswers[questionId].charCodeAt(0) - 96})`);
+                    if (correctOption) {
+                        correctOption.classList.add('correct');
+                    }
+                }
+            }
+        });
+        
+        // Mostrar resultados
+        const quizSuffix = prefixes[quizType];
+        const resultsElement = document.getElementById(`quiz-results-${quizSuffix}`);
+        const scoreElement = document.getElementById(`score-${quizSuffix}`);
+        const messageElement = document.getElementById(`result-message-${quizSuffix}`);
+        
+        if (scoreElement) scoreElement.textContent = `${score}/${totalQuestions}`;
+        
+        // Mensaje según el puntaje
+        const percentage = (score / totalQuestions) * 100;
+        let message = '';
+        if (percentage >= 80) {
+            message = '¡Excelente! Dominas los conceptos de este tema.';
+        } else if (percentage >= 60) {
+            message = '¡Buen trabajo! Tienes un buen conocimiento del tema.';
+        } else if (percentage >= 40) {
+            message = 'No está mal, pero podrías repasar algunos conceptos.';
+        } else {
+            message = 'Necesitas estudiar más los conceptos de este tema.';
+        }
+        
+        if (messageElement) messageElement.textContent = message;
+        if (resultsElement) {
+            resultsElement.style.display = 'block';
+            resultsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    function resetQuiz(quizType) {
+        const prefixes = {
+            'sistemas-operativos': 'so',
+            'gestion-procesos': 'gp',
+            'gestion-memoria': 'gm',
+            'gestion-almacenamiento': 'ga'
+        };
+        
+        const quizSuffix = prefixes[quizType];
+        const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
+        
+        // Limpiar selecciones y marcas
+        if (quizContainer) {
+            quizContainer.querySelectorAll('.quiz-option').forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+        }
+        
+        // Ocultar resultados
+        const resultsElement = document.getElementById(`quiz-results-${quizSuffix}`);
+        if (resultsElement) {
+            resultsElement.style.display = 'none';
+        }
+    }
+    // Mostrar categorías de referencias - FUNCIÓN CORREGIDA Y AISLADA
+function showReferenceCategory(category) {
+    console.log('Mostrando categoría de referencia:', category);
+    
+    // SOLO trabajar con elementos de referencias
+    const referenceContainer = document.querySelector('#referencias');
+    if (!referenceContainer) return;
+    
+    // Ocultar todas las categorías de referencia
+    referenceContainer.querySelectorAll('.reference-category').forEach(cat => {
         cat.classList.remove('active');
     });
     
-    // Desactivar todos los botones
-    document.querySelectorAll('.chapter-btn').forEach(btn => {
+    // Desactivar todos los botones de referencia
+    referenceContainer.querySelectorAll('.reference-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     
     // Mostrar categoría seleccionada
-    document.getElementById(category + '-category').classList.add('active');
+    const targetCategory = document.getElementById(category + '-category');
+    if (targetCategory) {
+        targetCategory.classList.add('active');
+    }
     
     // Activar botón seleccionado
-    event.target.classList.add('active');
-}
-        
-        // Envío del quiz
-       function submitQuiz(quizType) {
-    let score = 0;
-    let totalQuestions = 0;
-    
-    // Determinar el número de preguntas según el tipo de quiz
-    switch(quizType) {
-        case 'sistemas-operativos':
-            totalQuestions = 5;
-            break;
-        case 'gestion-procesos':
-            totalQuestions = 5;
-            break;
-        case 'gestion-memoria':
-            totalQuestions = 7;
-            break;
-        case 'gestion-almacenamiento':
-            totalQuestions = 8;
-            break;
+    if (event && event.target) {
+        event.target.classList.add('active');
     }
-    
-    // Calificar cada pregunta del quiz actual
-    const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
-    const questions = quizContainer.querySelectorAll('.quiz-question');
-    
-    questions.forEach((question, index) => {
-        const questionNumber = index + 1;
-        let questionId = '';
-        
-        // Determinar el prefijo según el tipo de quiz
-        switch(quizType) {
-            case 'sistemas-operativos':
-                questionId = `so${questionNumber}`;
-                break;
-            case 'gestion-procesos':
-                questionId = `gp${questionNumber}`;
-                break;
-            case 'gestion-memoria':
-                questionId = `gm${questionNumber}`;
-                break;
-            case 'gestion-almacenamiento':
-                questionId = `ga${questionNumber}`;
-                break;
-        }
-        
-        const selectedOption = question.querySelector('.quiz-option.selected');
-        
-        if (selectedOption) {
-            const selectedAnswer = selectedOption.textContent.trim().charAt(0);
-            
-            // Marcar respuesta correcta/incorrecta
-            if (selectedAnswer === correctAnswers[questionId]) {
-                selectedOption.classList.add('correct');
-                score++;
-            } else {
-                selectedOption.classList.add('incorrect');
-                
-                // Mostrar la respuesta correcta
-                const correctOption = question.querySelector(`.quiz-option:nth-child(${correctAnswers[questionId].charCodeAt(0) - 96})`);
-                if (correctOption) {
-                    correctOption.classList.add('correct');
-                }
-            }
-        }
+}
+
+    // Inicializar la página al cargar
+    document.addEventListener('DOMContentLoaded', function() {
+        resetPageStates();
     });
-    
-    // Mostrar resultados
-    let quizSuffix = '';
-    switch(quizType) {
-        case 'sistemas-operativos':
-            quizSuffix = 'so';
-            break;
-        case 'gestion-procesos':
-            quizSuffix = 'gp';
-            break;
-        case 'gestion-memoria':
-            quizSuffix = 'gm';
-            break;
-        case 'gestion-almacenamiento':
-            quizSuffix = 'ga';
-            break;
-    }
-    
-    const resultsElement = document.getElementById(`quiz-results-${quizSuffix}`);
-    const scoreElement = document.getElementById(`score-${quizSuffix}`);
-    const messageElement = document.getElementById(`result-message-${quizSuffix}`);
-    
-    scoreElement.textContent = `${score}/${totalQuestions}`;
-    
-    // Mensaje según el puntaje
-    const percentage = (score / totalQuestions) * 100;
-    if (percentage >= 80) {
-        messageElement.textContent = '¡Excelente! Dominas los conceptos de este tema.';
-    } else if (percentage >= 60) {
-        messageElement.textContent = '¡Buen trabajo! Tienes un buen conocimiento del tema.';
-    } else if (percentage >= 40) {
-        messageElement.textContent = 'No está mal, pero podrías repasar algunos conceptos.';
-    } else {
-        messageElement.textContent = 'Necesitas estudiar más los conceptos de este tema.';
-    }
-    
-    resultsElement.style.display = 'block';
-    resultsElement.scrollIntoView({ behavior: 'smooth' });
-}
-        
-        function resetQuiz(quizType) {
-    let quizSuffix = '';
-    switch(quizType) {
-        case 'sistemas-operativos':
-            quizSuffix = 'so';
-            break;
-        case 'gestion-procesos':
-            quizSuffix = 'gp';
-            break;
-        case 'gestion-memoria':
-            quizSuffix = 'gm';
-            break;
-        case 'gestion-almacenamiento':
-            quizSuffix = 'ga';
-            break;
-    }
-    
-    const quizContainer = document.querySelector(`#quiz-${quizType} .quiz-container`);
-    
-    // Limpiar selecciones y marcas
-    quizContainer.querySelectorAll('.quiz-option').forEach(option => {
-        option.classList.remove('selected', 'correct', 'incorrect');
-    });
-    
-    // Ocultar resultados
-    document.getElementById(`quiz-results-${quizSuffix}`).style.display = 'none';
-}
-    </script>
+</script>
 </body>
 </html>
