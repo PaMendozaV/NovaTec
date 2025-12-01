@@ -6,7 +6,7 @@
     <title>NovaPM - Plataformas Tecnológicas</title>
     <style>
         /* Variables de colores - Morado elegante y oscuro */
-        :root {
+        :root { 
             --primary-color: #4a1e6a;
             --secondary-color: #5d2a87;
             --accent-color: #7b3ca6;
@@ -15,6 +15,7 @@
             --text-color: #333;
             --text-light: #fff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            
             --transition: all 0.3s ease;
         }
 
@@ -688,7 +689,7 @@
                 <div class="container banner-content">
                     <h1>Plataformas Tecnológicas</h1>
                     <p>Explora el fascinante mundo de los sistemas operativos, su gestión de procesos, memoria y almacenamiento. Un curso completo para entender las bases de la computación moderna.</p>
-                    <a href="#" class="btn" onclick="showPage('contenido')">Explorar Contenido</a>
+                   <a href="#contenido-principal" class="btn" onclick="scrollToContent()">Explorar Contenido</a>
                 </div>
             </section>
 
@@ -778,7 +779,7 @@
                             <h3>Definición de Sistema Operativo</h3>
                             <p>Un <strong>sistema operativo (SO)</strong> es un software fundamental que actúa como intermediario entre el usuario y el hardware del sistema de cómputo. Su función principal es gestionar los recursos del hardware y proporcionar un entorno en el que los programas puedan ejecutarse eficientemente.</p>
                             
-                            <img src="https://i.imgur.com/0o82MAN.png" alt="Arquitectura de Sistema Operativo" class="content-image">
+                            <img src="https://th.bing.com/th/id/R.faa6a2a315aaf4ddb30de317c651ae9c?rik=94B4IIcdVflfMQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f-8ESG94IVIFw%2fU6g2guALigI%2fAAAAAAAAADE%2fyjw6tdp_WUw%2fs1600%2f1.png&ehk=tXP7ipM8r0Gaau6vEIWCCVZL9XbZqD6s9DPiW%2b30l9I%3d&risl=&pid=ImgRaw&r=0" alt="Arquitectura de Sistema Operativo" class="content-image">
                             <p class="image-caption">Esquema sobre la Estructura básica de un Sistema Operativo</p>
                             
                             <p>El sistema operativo es el "puente" entre el usuario, las aplicaciones y el hardware. Sin un sistema operativo, una computadora sería simplemente un conjunto de componentes electrónicos sin capacidad de realizar tareas útiles.</p>
@@ -1476,6 +1477,7 @@
                         <div class="quiz-tab" onclick="showQuiz('gestion-procesos')">Gestión de Procesos</div>
                         <div class="quiz-tab" onclick="showQuiz('gestion-memoria')">Gestión de Memoria</div>
                         <div class="quiz-tab" onclick="showQuiz('gestion-almacenamiento')">Gestión de Almacenamiento</div>
+                    <div class="quiz-tab" onclick="showQuiz('interactivos')">Quizzes Interactivos</div>
                     </div>
 
                     <!-- Quiz de Sistemas Operativos -->
@@ -1805,6 +1807,105 @@
                         </div>
                     </div>
                 </div>
+                <!-- Quiz Interactivos -->
+<div class="quiz-section" id="quiz-interactivos">
+    <div class="quiz-container">
+        <h3>Quizzes Interactivos Externos</h3>
+        <p>Explora estos recursos interactivos externos para reforzar tu aprendizaje de manera divertida y práctica.</p>
+        
+        <div class="content-grid" style="margin-top: 40px;">
+            <!-- Sistemas Operativos -->
+            <div class="content-card">
+                <div class="card-img">
+                    <img src="https://johnbestmarketingtools.com/wp-content/uploads/2023/09/Website-Automation.jpg" alt="Quiz Sistemas Operativos">
+                </div>
+                <div class="card-content">
+                    <h3>Sistemas Operativos</h3>
+                    <p>Pon a prueba tus conocimientos sobre conceptos fundamentales de sistemas operativos.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://wayground.com/join/quiz/5ea0a1675acf27001cadfdc4/start?studentShare=true" 
+                           target="_blank" class="btn" style="margin-bottom: 10px; width: 100%;">
+                            Quiz WayGround
+                        </a>
+                        <a href="https://es.educaplay.com/recursos-educativos/10604282-sistemas_operativos.html" 
+                           target="_blank" class="btn" style="width: 100%; background-color: var(--secondary-color);">
+                            Juego Educaplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gestión de Procesos -->
+            <div class="content-card">
+                <div class="card-img">
+                    <img src="https://gigi.nullneuron.net/gigilabs/wp-content/uploads/2014/11/win10-virtual-desktops.png" alt="Quiz Gestión de Procesos">
+                </div>
+                <div class="card-content">
+                    <h3>Gestión de Procesos</h3>
+                    <p>Demuestra tu comprensión sobre planificación, estados y sincronización de procesos.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://es.educaplay.com/recursos-educativos/26969245-gestion_de_procesos_en_os.html" 
+                           target="_blank" class="btn" style="margin-bottom: 10px; width: 100%;">
+                            Gestión de Procesos
+                        </a>
+                        <a href="https://es.educaplay.com/recursos-educativos/26969314-estados_de_proceso_en_so.html" 
+                           target="_blank" class="btn" style="width: 100%; background-color: var(--secondary-color);">
+                            Estados de Proceso
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gestión de Memoria -->
+            <div class="content-card">
+                <div class="card-img">
+                    <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2017/05/236640-cual-es-cantidad-memoria-ram-adecuada-mi-pc.jpg?tf=3840x" alt="Quiz Gestión de Memoria">
+                </div>
+                <div class="card-content">
+                    <h3>Gestión de Memoria</h3>
+                    <p>Reto interactivo sobre paginación, memoria virtual y algoritmos de reemplazo.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://es.educaplay.com/recursos-educativos/26969489-memoria_en_juego_conceptos_de_paginas.html" 
+                           target="_blank" class="btn" style="margin-bottom: 10px; width: 100%;">
+                            Conceptos de Páginas
+                        </a>
+                        <a href="https://wayground.com/join/quiz/65c584b19222fa67ad957192/start?studentShare=true" 
+                           target="_blank" class="btn" style="width: 100%; background-color: var(--secondary-color);">
+                            Quiz Memoria Avanzado
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gestión de Almacenamiento -->
+            <div class="content-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Quiz Gestión de Almacenamiento">
+                </div>
+                <div class="card-content">
+                    <h3>Gestión de Almacenamiento</h3>
+                    <p>Aprende sobre sistemas de archivos con este juego de emparejamiento de conceptos.</p>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="https://es.educaplay.com/recursos-educativos/26969433-sistemas_de_archivos_empareja_conceptos.html" 
+                           target="_blank" class="btn" style="width: 100%;">
+                            Sistemas de Archivos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background-color: #f8f5fc; padding: 20px; border-radius: 10px; margin-top: 40px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 10px;">💡 Instrucciones:</h4>
+            <ul style="margin-bottom: 0;">
+                <li>Los enlaces se abrirán en una nueva pestaña</li>
+                <li>No es necesario registrarse para acceder a los quizzes</li>
+                <li>Puedes realizar cada quiz las veces que desees</li>
+                <li>Estos recursos están optimizados para navegadores modernos</li>
+            </ul>
+        </div>
+    </div>
+</div>
             </section>
         </div>
 
@@ -2201,58 +2302,110 @@
         navMenu.classList.toggle('active');
     });
     
-    // Mostrar páginas - VERSIÓN MEJORADA CON REPARACIÓN
-    function showPage(pageId) {
-        // Ocultar todas las páginas
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
-        
-        // Mostrar página seleccionada
-        document.getElementById(pageId).classList.add('active');
-        
-        // Actualizar navegación activa
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-        });
-        event.target.classList.add('active');
-        
-        // Cerrar menú móvil si está abierto
-        navMenu.classList.remove('active');
-        
-        // VERIFICAR Y REPARAR CONTENIDO AUTOMÁTICAMENTE
-        setTimeout(() => {
-            repairContentIfNeeded();
-        }, 50);
-        
-        // Scroll al inicio de la página
-        window.scrollTo(0, 0);
+   // Mostrar páginas - VERSIÓN MEJORADA CON MARCADORES ACTIVOS
+function showPage(pageId) {
+    // Ocultar todas las páginas
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Mostrar página seleccionada
+    document.getElementById(pageId).classList.add('active');
+    
+    // Actualizar navegación activa - VERSIÓN MEJORADA
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        // Eliminar subrayado activo si existe
+        link.classList.remove('nav-active');
+    });
+    
+    // Encontrar y activar el enlace correspondiente a la página
+    const activeLink = document.querySelector(`.nav-link[onclick*="${pageId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+        // Agregar una clase extra para mayor claridad visual
+        activeLink.classList.add('nav-active');
     }
     
-    // Mostrar contenido de temas - VERSIÓN SEGURA
-    function showTopic(topic) {
-        // Ocultar todos los contenidos de TEMAS
-        document.querySelectorAll('#temas .topic-content').forEach(content => {
-            content.classList.remove('active');
-        });
-        
-        // Desactivar todas las pestañas de TEMAS
-        document.querySelectorAll('#temas .topic-tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        
-        // Mostrar contenido seleccionado
-        document.getElementById(topic + '-content').classList.add('active');
-        
-        // Activar pestaña seleccionada
-        event.target.classList.add('active');
-        
-        // Mostrar primer capítulo por defecto
-        const firstChapter = document.querySelector(`#${topic}-content .chapter-btn`);
-        if (firstChapter) {
-            showChapter(topic, 1);
-        }
+    // Cerrar menú móvil si está abierto
+    navMenu.classList.remove('active');
+    
+    // VERIFICAR Y REPARAR CONTENIDO AUTOMÁTICAMENTE
+    setTimeout(() => {
+        repairContentIfNeeded();
+    }, 50);
+    
+    // Scroll al inicio de la página
+    window.scrollTo(0, 0);
+    
+    // ===== AGREGAR ESTO PARA MANEJAR EL CONTENIDO DE PÁGINAS ESPECÍFICAS =====
+    
+    // Si es la página de Temas, activar el primer tema por defecto
+    if (pageId === 'temas') {
+        setTimeout(() => {
+            const firstTopicTab = document.querySelector('#temas .topic-tab');
+            if (firstTopicTab && !firstTopicTab.classList.contains('active')) {
+                // Simular clic en el primer tema
+                firstTopicTab.click();
+            }
+        }, 100);
     }
+    
+    // Si es la página de Evaluaciones, activar el primer quiz por defecto
+    if (pageId === 'evaluaciones') {
+        setTimeout(() => {
+            const firstQuizTab = document.querySelector('#evaluaciones .quiz-tab');
+            if (firstQuizTab && !firstQuizTab.classList.contains('active')) {
+                // Simular clic en el primer quiz
+                firstQuizTab.click();
+            }
+        }, 100);
+    }
+    
+    // Si es la página de Referencias, activar la primera categoría por defecto
+    if (pageId === 'referencias') {
+        setTimeout(() => {
+            const firstRefBtn = document.querySelector('#referencias .chapter-btn');
+            if (firstRefBtn && !firstRefBtn.classList.contains('active')) {
+                // Simular clic en la primera categoría
+                firstRefBtn.click();
+            }
+        }, 100);
+    }
+}
+    
+
+   // Mostrar contenido de temas - VERSIÓN MEJORADA CON CAPÍTULOS AUTOMÁTICOS
+function showTopic(topic) {
+    // Ocultar todos los contenidos de TEMAS
+    document.querySelectorAll('#temas .topic-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Desactivar todas las pestañas de TEMAS
+    document.querySelectorAll('#temas .topic-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Mostrar contenido seleccionado
+    const topicContent = document.getElementById(topic + '-content');
+    if (topicContent) {
+        topicContent.classList.add('active');
+        
+        // Activar primer capítulo automáticamente si no hay uno activo
+        setTimeout(() => {
+            const hasActiveChapter = topicContent.querySelector('.chapter-content.active');
+            if (!hasActiveChapter) {
+                showChapter(topic, 1);
+            }
+        }, 50);
+    }
+    
+    // Activar pestaña seleccionada
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
+}
     
     // Mostrar capítulos dentro de los temas - VERSIÓN CORREGIDA
     function showChapter(topic, chapterNumber) {
@@ -2458,7 +2611,40 @@
         
         console.log(`✅ Capítulos de ${topic} reiniciados`);
     }
-
+// Función para hacer scroll suave a la sección de contenido
+function scrollToContent() {
+    // Prevenir el comportamiento por defecto del enlace
+    event.preventDefault();
+    
+    // Cerrar menú móvil si está abierto
+    navMenu.classList.remove('active');
+    
+    // Si no estamos en la página de inicio, ir primero allí
+    const inicioPage = document.getElementById('inicio');
+    if (!inicioPage.classList.contains('active')) {
+        showPage('inicio');
+        
+        // Esperar a que la página cargue y luego hacer scroll
+        setTimeout(() => {
+            const targetSection = document.querySelector('.section:not(.banner)');
+            if (targetSection) {
+                targetSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }, 300);
+    } else {
+        // Ya estamos en inicio, hacer scroll directamente
+        const targetSection = document.querySelector('.section:not(.banner)');
+        if (targetSection) {
+            targetSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+    }
+}
     // Función para reiniciar contenido de Evaluaciones
     function resetEvaluationsContent() {
         const evaluationsPage = document.getElementById('evaluaciones');
